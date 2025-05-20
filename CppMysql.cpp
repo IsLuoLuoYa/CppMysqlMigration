@@ -198,11 +198,8 @@ namespace Mysql
 					continue;
 				}
 
-				printf("%s  %s\n", vNewType.c_str(), OldStrType.c_str());
 				string AlterTypeSql = "ALTER TABLE " + TableName + " MODIFY COLUMN " + it.Name + " " + vNewType;
 				auto ChangeRet = Query(AlterTypeSql);
-				printf("aa%s\n", GetError());
-				printf("bb%s\n", AlterTypeSql.c_str());
 				if (ChangeRet)
 					FreeResultSet(HasField1);
 			}
